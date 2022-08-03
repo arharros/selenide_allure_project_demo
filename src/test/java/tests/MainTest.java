@@ -1,6 +1,11 @@
 package tests;
 
 
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import jdk.jfr.Description;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import page_objects.DemoQaPracticeForm;
 import page_objects.DemoQaTextBox;
@@ -8,7 +13,8 @@ import page_objects.TestsBase;
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.open;
-
+@Owner("Тулумбаев Р.Р.")
+@DisplayName("Запуск тестов Demo QA.")
 public class MainTest extends TestsBase {
     String firstName = "Ivan"
             ,lastName = "Ivanov"
@@ -26,9 +32,11 @@ public class MainTest extends TestsBase {
 
 
     @Test
+    @DisplayName("Проверка корректности формирования таблицы данных студента.")
+    @Severity(SeverityLevel.NORMAL)
     public void PracticeFormTest() {
-        open("/automation-practice-form");
         DemoQaPracticeForm practiceForm = new DemoQaPracticeForm();
+        practiceForm.openTestPage();
         practiceForm.inputFirstName(firstName);
         practiceForm.inputLastName(lastName);
         practiceForm.inputUserEmail(userEmail);
@@ -49,9 +57,12 @@ public class MainTest extends TestsBase {
     }
 
     @Test
+    @Severity(SeverityLevel.TRIVIAL)
+    @DisplayName("Проверка корректного отображения введеных данных в текстовой форме.")
+
     public void TextBoxText() {
-        open("/text-box");
         DemoQaTextBox textBox = new DemoQaTextBox();
+        textBox.openTestPage();
         textBox.inputFullName(firstName+" "+lastName)
                 .inputEmail(userEmail)
                 .inputCurrentAddress(currentAddress)
