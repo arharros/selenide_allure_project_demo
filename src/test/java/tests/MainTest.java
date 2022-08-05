@@ -4,15 +4,11 @@ package tests;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-import jdk.jfr.Description;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import page_objects.DemoQaPracticeForm;
 import page_objects.DemoQaTextBox;
 import page_objects.TestsBase;
-
-import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Selenide.open;
 @Owner("Тулумбаев Р.Р.")
 @DisplayName("Запуск тестов Demo QA.")
 public class MainTest extends TestsBase {
