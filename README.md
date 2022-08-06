@@ -1,2 +1,2 @@
-# selenide_allure_project_demo
-Автотест DemoQA
+# Добро пожаловать!
+Это небольшой пример Автотеста DemoQA
