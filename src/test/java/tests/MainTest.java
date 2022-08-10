@@ -1,6 +1,5 @@
 package tests;
 
-
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -9,9 +8,11 @@ import org.junit.jupiter.api.Test;
 import page_objects.DemoQaPracticeForm;
 import page_objects.DemoQaTextBox;
 import page_objects.TestsBase;
-@Owner("Тулумбаев Р.Р.")
+
+@Owner("tulumbaevrr")
 @DisplayName("Запуск тестов Demo QA.")
 public class MainTest extends TestsBase {
+
     String firstName = "Ivan"
             ,lastName = "Ivanov"
             ,userEmail = "ivanov@company.com"
@@ -55,7 +56,6 @@ public class MainTest extends TestsBase {
     @Test
     @Severity(SeverityLevel.TRIVIAL)
     @DisplayName("Проверка корректного отображения введеных данных в текстовой форме.")
-
     public void TextBoxText() {
         DemoQaTextBox textBox = new DemoQaTextBox();
         textBox.openTestPage();

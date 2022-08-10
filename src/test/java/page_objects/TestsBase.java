@@ -10,7 +10,7 @@ public class TestsBase {
     @BeforeEach
     public void openBrowser() {
         Configuration.baseUrl = ("https://demoqa.com");
-        Configuration.browserSize = "1280x1080";
+        Configuration.browserSize = "1280x1080"; // исправить на maximize
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(false));
 
     }
